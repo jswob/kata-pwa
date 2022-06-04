@@ -4,7 +4,19 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    'ember-cli-image-transformer': {
+      images: [
+        {
+          inputFilename: 'public/assets/icons/camera.png',
+          outputFileName: 'camera-',
+          convertTo: 'png',
+          sizes: [32, 192, 280, 512],
+        },
+      ],
+    },
+    'asset-cache': {
+      include: ['assets/**/*', 'ember-welcome-page/images/*'],
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
