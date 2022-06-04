@@ -17,9 +17,11 @@ module.exports = function (environment) {
       },
     },
 
-    APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+    APP: {},
+
+    'ember-google-maps': {
+      key: process.env.GOOGLE_API_KEY,
+      protocol: 'https',
     },
   };
 

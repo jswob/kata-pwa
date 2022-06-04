@@ -7,5 +7,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('geo');
+  this.route('feat', function () {
+    this.route('geolocation');
+  });
 });

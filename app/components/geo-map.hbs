@@ -1,0 +1,15 @@
+<div {{did-insert this.fetchLocation}} class="map-wrapper">
+  {{#if this.currentLocation}}
+    <GMap
+      @lat={{this.currentLocation.latitude}}
+      @lng={{this.currentLocation.longitude}}
+      @zoom={{18}}
+      as |map|
+    >
+      <map.marker
+        @lat={{this.currentLocation.latitude}}
+        @lng={{this.currentLocation.longitude}}
+      />
+    </GMap>
+  {{/if}}
+</div>

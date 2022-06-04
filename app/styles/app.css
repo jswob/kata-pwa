@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+.ember-google-map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-wrapper {
+  display: flex;
+  height: calc(100vh - 60px);
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.feat-nav {
+  align-items: center;
+  background-color: #F2E9DE;
+  display: flex;
+  height: 60px;
+  padding: 10px 25px;
+}
+
+.feat-nav__link {
+  color: #EF924A;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .5s;
+  padding: 5px 10px;
+}
+
+.feat-nav__link:hover {
+  color: #DE8139;
+  font-weight: 800;
+}
