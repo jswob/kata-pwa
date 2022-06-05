@@ -46,7 +46,10 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV['ember-google-maps'] = {
+      key: process.env.GOOGLE_API_KEY,
+      protocol: 'https',
+    };
   }
 
   return ENV;

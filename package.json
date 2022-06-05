@@ -36,7 +36,6 @@
     "ember-cli-babel": "^7.26.10",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-dotenv": "^3.1.0",
-    "ember-cli-fastboot": "^3.3.0",
     "ember-cli-geo": "^4.0.0",
     "ember-cli-htmlbars": "^5.7.2",
     "ember-cli-image-transformer": "^5.0.0",

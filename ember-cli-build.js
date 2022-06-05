@@ -14,6 +14,9 @@ module.exports = function (defaults) {
         },
       ],
     },
+    dotEnv: {
+      clientAllowedKeys: ['GOOGLE_API_KEY'],
+    },
     'asset-cache': {
       include: ['assets/**/*', 'ember-welcome-page/images/*'],
     },
