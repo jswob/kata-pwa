@@ -24,6 +24,7 @@ html, body {
   background-color: #F2E9DE;
   display: flex;
   height: 60px;
+  justify-content: space-between;
   padding: 10px 25px;
 }
 
