@@ -1,0 +1,20 @@
+<form {{on 'submit' this.saveNote}}>
+  <label for='title'>Title</label>
+  <input
+    id='title'
+    type='text'
+    value={{this.title}}
+    {{on 'keyup' (fn this.setValue 'title')}}
+  />
+
+  <label for='description'>Description</label>
+  <textarea
+    id='description'
+    value={{this.description}}
+    {{on 'keyup' (fn this.setValue 'description')}}
+  ></textarea>
+
+  <div>
+    <button type='submit' disabled={{this.canNotBeSaved}}>Save</button>
+  </div>
+</form>

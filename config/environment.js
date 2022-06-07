@@ -23,6 +23,9 @@ module.exports = function (environment) {
       key: process.env.GOOGLE_API_KEY,
       protocol: 'https',
     },
+    'ember-local-storage': {
+      includeEmberDataSupport: true,
+    },
   };
 
   if (environment === 'development') {
