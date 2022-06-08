@@ -1,0 +1,25 @@
+<div {{did-insert this.setup}}>
+  <JSQR::Scanner
+    @cameraStream={{this.cameraStream}}
+    @onData={{this.generateLink}}
+    @highlightColor='#3490DC'
+  />
+
+  <PowerSelect
+    @options={{this.cameraOptions}}
+    @onChange={{this.changeCamera}}
+    @selected={{this.activeCamera}}
+    as |camera|
+  >
+    {{camera.label}}
+  </PowerSelect>
+</div>
+
+{{#if this.activeLink}}
+  <Modal>
+    <a href={{this.activeLink}} target='_blank' rel='noopener noreferrer'>
+      {{this.activeLink}}
+    </a>
+    <span>Visit</span>
+  </Modal>
+{{/if}}

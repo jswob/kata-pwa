@@ -10,5 +10,6 @@ Router.map(function () {
   this.route('feat', function () {
     this.route('geolocation');
     this.route('notes');
+    this.route('camera');
   });
 });
