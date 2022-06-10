@@ -42,4 +42,9 @@ export default class QrScannerComponent extends Component {
 
     this.activeLink = url;
   }
+
+  @action
+  closeModal() {
+    this.activeLink = null;
+  }
 }

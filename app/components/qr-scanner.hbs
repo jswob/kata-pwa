@@ -1,11 +1,14 @@
-<div {{did-insert this.setup}}>
+<div class='scanner__wrapper' {{did-insert this.setup}}>
   <JSQR::Scanner
+    class='scanner__camera'
+    width='100%'
     @cameraStream={{this.cameraStream}}
     @onData={{this.generateLink}}
     @highlightColor='#3490DC'
   />
 
   <PowerSelect
+    class='scanner__selection'
     @options={{this.cameraOptions}}
     @onChange={{this.changeCamera}}
     @selected={{this.activeCamera}}
@@ -16,10 +19,15 @@
 </div>
 
 {{#if this.activeLink}}
-  <Modal>
-    <a href={{this.activeLink}} target='_blank' rel='noopener noreferrer'>
+  <Modal class='modal-qr-scanner' @onClose={{this.closeModal}}>
+    <span class='modal-qr-scanner__label'>Here's your link</span>
+    <a
+      class='modal-qr-scanner__link'
+      href={{this.activeLink}}
+      target='_blank'
+      rel='noopener noreferrer'
+    >
       {{this.activeLink}}
     </a>
-    <span>Visit</span>
   </Modal>
 {{/if}}

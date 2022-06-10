@@ -6,6 +6,22 @@
   }
 }
 
+@keyframes slide-modal-down {
+  from {
+    top: -50%;
+  } to {
+    top: 50%;
+  }
+}
+
+@keyframes modal-overlay-background {
+  from {
+    background-color: transparent;
+  } to {
+    background-color: rgba(0,0,0,.7);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -187,4 +203,55 @@ html, body {
 .note-list__note-description {
   background-color: var(--color-bone);
   padding: 10px;
+}
+
+.scanner__wrapper {
+  overflow: hidden;
+}
+
+.scanner__camera {
+  width: 100%;
+}
+
+.scanner__selection {
+  margin: 10px;
+}
+
+.modal__overlay {
+  animation: modal-overlay-background 1s ease-in-out forwards;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.modal {
+  animation: slide-modal-down 1s ease-in-out forwards;
+  background-color: var(--color-bone);
+  left: 50%;
+  flex-grow: 1;
+  overflow: hidden;
+  padding: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.modal-qr-scanner {
+  text-align: center;
+}
+
+.modal-qr-scanner__label {
+  font-size: 24px;
+  width: 100%;
+}
+
+.modal-qr-scanner__link {
+  padding: 25px 0;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-cafe-noir);
 }
