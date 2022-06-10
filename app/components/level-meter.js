@@ -3,7 +3,6 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 export default class LevelMeterComponent extends Component {
-  @tracked alpha;
   @tracked beta;
   @tracked gamma;
 
@@ -13,7 +12,6 @@ export default class LevelMeterComponent extends Component {
   }
 
   handleOrientation({ beta, gamma }) {
-    console.log('x');
     this.beta = beta;
     this.gamma = gamma;
   }

@@ -1,7 +1,8 @@
-<div class="feat-nav">
-  <LinkTo class="feat-nav__link" @route="index">BACK</LinkTo>
-
-  <OnlineStatusSign />
+<div class="feat-wrapper">
+  {{outlet}}
 </div>
 
-{{outlet}}
+<div class="feat-nav">
+  <OnlineStatusSign />
+  <LinkTo class="feat-nav__link" @route="index">BACK</LinkTo>
+</div>
