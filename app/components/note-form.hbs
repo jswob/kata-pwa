@@ -1,20 +1,30 @@
-<form {{on 'submit' this.saveNote}}>
-  <label for='title'>Title</label>
-  <input
-    id='title'
-    type='text'
-    value={{this.title}}
-    {{on 'keyup' (fn this.setValue 'title')}}
-  />
+<form class='note-form' {{on 'submit' this.saveNote}}>
+  <fieldset class='note-form__field'>
+    <legend class='note-form__field-label'>Title</legend>
+    <input
+      class='note-form__field-input'
+      id='title'
+      type='text'
+      value={{this.title}}
+      {{on 'keyup' (fn this.setValue 'title')}}
+    />
+  </fieldset>
 
-  <label for='description'>Description</label>
-  <textarea
-    id='description'
-    value={{this.description}}
-    {{on 'keyup' (fn this.setValue 'description')}}
-  ></textarea>
+  <fieldset class='note-form__field'>
+    <legend class='note-form__field-label'>Content</legend>
+    <textarea
+      class='note-form__field-input'
+      id='description'
+      value={{this.description}}
+      {{on 'keyup' (fn this.setValue 'description')}}
+    ></textarea>
+  </fieldset>
 
-  <div>
-    <button type='submit' disabled={{this.canNotBeSaved}}>Save</button>
+  <div class='note-form__buttons'>
+    <button
+      class='note-form__button'
+      type='submit'
+      disabled={{this.canNotBeSaved}}
+    >Save</button>
   </div>
 </form>

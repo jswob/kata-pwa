@@ -1,3 +1,12 @@
-{{#each @notes as |note|}}
-  {{note.title}} {{note.description}}
-{{/each}}
+<div class="note-list">
+  {{#each @notes as |note|}}
+    <div class="note-list__note">
+      <span class="note-list__note-title">
+        {{note.title}}
+      </span>
+      <span class="note-list__note-description">
+        {{note.description}}
+      </span>
+    </div>
+  {{/each}}
+</div>
