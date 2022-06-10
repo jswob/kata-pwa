@@ -11,5 +11,6 @@ Router.map(function () {
     this.route('geolocation');
     this.route('notes');
     this.route('camera');
+    this.route('orientation');
   });
 });

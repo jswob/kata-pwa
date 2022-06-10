@@ -1,0 +1,18 @@
+<div
+  class='level-meter'
+  {{did-insert this.setupListener}}
+  {{will-destroy this.removeListener}}
+>
+  <Level
+    class='level-meter__x'
+    @value={{this.beta}}
+    @min={{-180}}
+    @max={{180}}
+  />
+  <Level
+    class='level-meter__y'
+    @value={{this.gamma}}
+    @min={{-90}}
+    @max={{90}}
+  />
+</div>
