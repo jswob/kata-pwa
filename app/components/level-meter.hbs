@@ -1,16 +1,17 @@
+
 <div
-  class='level-meter'
+  class="level-meter"
   {{did-insert this.setupListener}}
   {{will-destroy this.removeListener}}
 >
   <Level
-    class='level-meter__x'
+    class="-horizontal"
     @value={{this.beta}}
     @min={{-180}}
     @max={{180}}
   />
   <Level
-    class='level-meter__y'
+    class="-vertical"
     @value={{this.gamma}}
     @min={{-90}}
     @max={{90}}

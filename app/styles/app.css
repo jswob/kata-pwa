@@ -30,7 +30,8 @@
   --nav-height: 60px;
   --color-cafe-noir: #523A28;
   --color-bone: #E4D8C9;
-  --color-dirt: #A47551
+  --color-dirt: #A47551;
+  --color-success-green: #4BB543;
 }
 
 html, body {
@@ -254,4 +255,63 @@ html, body {
   font-size: 20px;
   font-weight: 700;
   color: var(--color-cafe-noir);
+}
+
+.level-meter {
+  width: 350px;
+  height: 350px;
+  padding: 10px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.level-input {
+  -webkit-appearance: none;
+  width: 100%;
+  z-index: 1;
+}
+
+.level-input.-centered {
+  z-index: 5;
+}
+
+.level-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid black;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  background-color: var(--color-cafe-noir);
+}
+
+.level-input::-webkit-slider-runnable-track {
+  border: 2px solid black;
+  border-radius: 30px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.level-input.-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 90%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.level-input.-vertical {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.level-input.-centered::-webkit-slider-thumb {
+  background-color: var(--color-success-green);
+}
+
+.level-input.-centered::-webkit-slider-runnable-track {
+  border-color: var(--color-success-green);
 }

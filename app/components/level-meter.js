@@ -11,6 +11,7 @@ export default class LevelMeterComponent extends Component {
     window.addEventListener('deviceorientation', this.handleOrientation, true);
   }
 
+  @action
   handleOrientation({ beta, gamma }) {
     this.beta = beta;
     this.gamma = gamma;
