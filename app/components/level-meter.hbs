@@ -1,19 +1,28 @@
-
 <div
   class="level-meter"
-  {{did-insert this.setupListener}}
+  {{did-insert this.setup}}
   {{will-destroy this.removeListener}}
 >
-  <Level
-    class="-horizontal"
-    @value={{this.beta}}
-    @min={{-180}}
-    @max={{180}}
-  />
-  <Level
-    class="-vertical"
-    @value={{this.gamma}}
-    @min={{-90}}
-    @max={{90}}
-  />
+  {{#if this.isPermissionGranted}}
+    <Level
+      class="-horizontal"
+      @value={{this.beta}}
+      @min={{-180}}
+      @max={{180}}
+    />
+    <Level class="-vertical" @value={{this.gamma}} @min={{-90}} @max={{90}} />
+  {{/if}}
 </div>
+
+{{#unless this.isPermissionGranted}}
+  <Modal class="level-meter-permission-modal">
+    <span class="level-meter-permission-modal__description">Since you're using
+      apple device you need to manually ask for permission to use
+      orientationdevice api :(</span>
+    <button
+      class="level-meter-permission-modal__button"
+      type="button"
+      {{on "click" this.askForPermission}}
+    >Request Permission</button>
+  </Modal>
+{{/unless}}
