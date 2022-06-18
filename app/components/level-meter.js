@@ -6,6 +6,7 @@ import { computed } from '@ember/object';
 
 export default class LevelMeterComponent extends Component {
   @service router;
+  @service appStorage;
 
   @tracked beta;
   @tracked gamma;
@@ -31,19 +32,19 @@ export default class LevelMeterComponent extends Component {
 
   @action
   async setup() {
-    if (!this.isApple /* || (await this.getSavedPermissionStatus()) */) {
+    if (!this.isApple || this.getSavedPermissionStatus()) {
       this.permission = 'granted';
       this.setupListener();
     }
   }
 
-  // async getSavedPermissionStatus() {
-  //   return await window.localStorage.getItem('hasSensorPermissionBeenGranted');
-  // }
+  getSavedPermissionStatus() {
+    return this.appStorage.getItem('hasSensorPermissionBeenGranted');
+  }
 
-  // async setSavedPermissionStatus(value) {
-  //   await window.localStorage.setItem('hasSensorPermissionBeenGranted', value);
-  // }
+  setSavedPermissionStatus(value) {
+    this.appStorage.setItem('hasSensorPermissionBeenGranted', value);
+  }
 
   setupListener() {
     window.addEventListener('deviceorientation', this.handleOrientation, true);
@@ -58,7 +59,7 @@ export default class LevelMeterComponent extends Component {
     if (!this.isPermissionGranted) {
       this.router.transitionTo('index');
     } else {
-      // await this.setSavedPermissionStatus(true);
+      await this.setSavedPermissionStatus(true);
       this.setupListener();
     }
   }
