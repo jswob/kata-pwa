@@ -13,6 +13,7 @@ module.exports = function (/* environment, appConfig */) {
     display: 'standalone',
     background_color: '#fff',
     theme_color: '#fff',
+    orientation: 'portrait',
     icons: [
       {
         src: 'assets/icons/camera-32.png',
