@@ -13,9 +13,11 @@ export default class QrScannerComponent extends Component {
 
   @action
   async setup() {
+    await navigator.mediaDevices.getUserMedia({ video: true });
+
     await this.checkCameras();
 
-    this.changeCamera(this.cameraOptions[0]);
+    this.changeCamera(this.cameraOptions[1]);
   }
 
   async checkCameras() {
