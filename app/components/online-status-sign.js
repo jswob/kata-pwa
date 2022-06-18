@@ -12,6 +12,7 @@ export default class OnlineStatusSignComponent extends Component {
 
   @action
   setup() {
+    this.updateIsOnline();
     ['load', 'online', 'offline'].forEach((eventName) =>
       window.addEventListener(eventName, () => this.updateIsOnline())
     );
