@@ -21,7 +21,10 @@ module.exports = function (environment) {
 
     'ember-google-maps': {
       key: process.env.GOOGLE_API_KEY,
+      language: 'en',
+      region: 'GB',
       protocol: 'https',
+      libraries: ['geometry', 'places'],
     },
     'ember-local-storage': {
       includeEmberDataSupport: true,
@@ -34,6 +37,13 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV['ember-google-maps'] = {
+      key: process.env.GOOGLE_API_KEY,
+      language: 'en',
+      region: 'GB',
+      protocol: 'https',
+      libraries: ['geometry', 'places'],
+    };
   }
 
   if (environment === 'test') {
