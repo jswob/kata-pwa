@@ -48,12 +48,7 @@ module.exports = function (environment) {
     ENV.APP.autoboot = false;
   }
 
-  if (environment === 'production') {
-    ENV['ember-google-maps'] = {
-      key: process.env.GOOGLE_API_KEY,
-      protocol: 'https',
-    };
-  }
+  if (environment === 'production') {}
 
   return ENV;
 };
