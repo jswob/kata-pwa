@@ -12,8 +12,8 @@ export default class GeoMapComponent extends Component {
   async fetchLocation() {
     let { coords } = await this.geolocation.getLocation();
 
-    const latitude = +coords.latitude.toFixed(2);
-    const longitude = +coords.longitude.toFixed(2);
+    const latitude = +coords.latitude;
+    const longitude = +coords.longitude;
 
     this.currentLocation = { latitude, longitude };
   }
