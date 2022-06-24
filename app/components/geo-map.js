@@ -6,7 +6,24 @@ import { action } from '@ember/object';
 export default class GeoMapComponent extends Component {
   @service geolocation;
 
+  @service('google-maps-api') maps;
+
   @tracked currentLocation = null;
+
+  @tracked pointsOfInterest = [];
+
+  @tracked mappedPointsOfInterest = [];
+
+  @action
+  mapPointsOfInterest() {
+    this.mappedPointsOfInterest = this.pointsOfInterest.map((point) => {
+      return {
+        name: point.name,
+        lat: point.geometry.location.lat(),
+        lng: point.geometry.location.lng(),
+      };
+    });
+  }
 
   @action
   async fetchLocation() {
@@ -16,5 +33,15 @@ export default class GeoMapComponent extends Component {
     const longitude = +coords.longitude;
 
     this.currentLocation = { latitude, longitude };
+
+    await this.maps.getPointsOfInterest(
+      this.currentLocation.latitude,
+      this.currentLocation.longitude,
+      (results) => {
+        if (typeof results === 'object') {
+          this.pointsOfInterest = results;
+        }
+      }
+    );
   }
 }

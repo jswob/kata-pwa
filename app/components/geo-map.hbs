@@ -1,11 +1,25 @@
-<div {{did-insert this.fetchLocation}} class="map-wrapper">
+<div
+  {{did-insert this.fetchLocation}}
+  {{did-update this.mapPointsOfInterest this.pointsOfInterest}}
+  class="map-wrapper"
+>
   {{#if this.currentLocation}}
     <GMap
       @lat={{this.currentLocation.latitude}}
       @lng={{this.currentLocation.longitude}}
-      @zoom={{18}}
+      @zoom={{15}}
       as |map|
     >
+      {{#each this.mappedPointsOfInterest as |restaurant|}}
+        <map.overlay
+          @lat={{restaurant.lat}}
+          @lng={{restaurant.lng}}>
+          <div class="point-of-interest">
+            {{restaurant.name}}
+          </div>
+        </map.overlay>
+      {{/each}}
+
       <map.marker
         @lat={{this.currentLocation.latitude}}
         @lng={{this.currentLocation.longitude}}
@@ -13,3 +27,6 @@
     </GMap>
   {{/if}}
 </div>
+
+
+<div id="hidden"></div>

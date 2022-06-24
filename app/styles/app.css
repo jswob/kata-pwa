@@ -341,3 +341,28 @@ html, body {
   background-color: var(--color-dirt);
   font-size: 18px;
 }
+
+.point-of-interest {
+  background-color: white;
+  position: relative;
+  font-size: 15px;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid black;
+  transform: translate(-50%, -100%);
+}
+
+.point-of-interest::after {
+  background: linear-gradient(45deg,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 51%,rgba(255,255,255,0) 100%) #fff;
+  box-shadow: -2px 2px 2px 0 rgb(178 178 178 / 40%);
+  content: "";
+  height: 15px;
+  left: 50%;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%) translateY(50%) rotate(-45deg);
+  width: 15px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+
+}
